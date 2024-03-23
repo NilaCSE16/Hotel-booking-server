@@ -100,7 +100,21 @@ async function run() {
       res.send(result);
     });
     app.get("/rooms", async (req, res) => {
-      const result = await roomCollection.find().toArray();
+      var result = [];
+      // var page = await roomCollection.estimatedDocumentCount();
+      if (!req.query) {
+        // page = parseInt(req.query.page);
+        result = await roomCollection.find().toArray();
+      } else {
+        const page = parseInt(req.query.page);
+        const size = parseInt(req.query.size);
+        result = await roomCollection
+          .find()
+          .skip(page * size)
+          .limit(size)
+          .toArray();
+      }
+      // const result = await roomCollection.find().toArray();
       res.send(result);
     });
     app.get("/rooms/:id", async (req, res) => {
@@ -108,6 +122,10 @@ async function run() {
       const query = { _id: new ObjectId(id) };
       const result = await roomCollection.find(query).toArray();
       res.send(result);
+    });
+    app.get("/roomsCount", async (req, res) => {
+      const count = await roomCollection.estimatedDocumentCount();
+      res.send({ count });
     });
 
     app.post("/addBookings", async (req, res) => {
