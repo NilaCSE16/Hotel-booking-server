@@ -13,6 +13,7 @@ app.use(
     origin: [
       "https://hotel-booking-client-tau.vercel.app/",
       "https://hotel-booking-979ba.firebaseapp.com/",
+      "http://localhost:5173/",
     ],
     credentials: true,
   })
