@@ -2,6 +2,13 @@
   "version": 2,
   "builds": [{ "src": "*.js", "use": "@vercel/node" }],
   "routes": [
-    { "src": "/(.*)", "dest": "/", "methods": ["GET", "POST", "PUT", "DELETE"] }
+    {
+      "src": "/(.*)",
+      "dest": "/",
+      "methods": ["GET", "POST", "PUT", "DELETE"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://hotel-booking-client-tau.vercel.app"
+      }
+    }
   ]
 }
