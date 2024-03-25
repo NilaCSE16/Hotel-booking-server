@@ -6,5 +6,16 @@
       "src": "/(.*)",
       "dest": "/"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://hotel-booking-client-tau.vercel.app"
+        }
+      ]
+    }
   ]
 }
