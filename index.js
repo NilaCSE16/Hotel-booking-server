@@ -12,7 +12,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://hotel-booking-client-tau.vercel.app",
+      "https://hotel-booking-client-tau.vercel.app/",
     ],
     credentials: true,
   })
