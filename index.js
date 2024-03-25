@@ -10,11 +10,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "https://hotel-booking-client-tau.vercel.app/",
-      "https://hotel-booking-979ba.firebaseapp.com/",
-      "http://localhost:5173/",
-    ],
+    origin: ["http://localhost:5173/"],
     credentials: true,
   })
 );
