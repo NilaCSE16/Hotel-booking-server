@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [{ "src": "*.js", "use": "@vercel/node" }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://hotel-booking-client-tau.vercel.app"
+        }
+      ]
+    }
+  ]
+}
