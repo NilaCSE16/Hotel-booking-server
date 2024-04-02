@@ -72,7 +72,7 @@ async function run() {
       res
         .cookie("refreshToken", accessToken, {
           httpOnly: true,
-          sameSite: "Strict",
+          sameSite: "None",
         })
         .header("Authorization", accessToken)
         .send({ success: true });
