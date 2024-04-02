@@ -13,6 +13,7 @@ app.use(
     origin: [
       "https://hotel-booking-client-tau.vercel.app",
       "http://localhost:5173",
+      "https://hotel-booking-979ba.firebaseapp.com/",
     ],
     credentials: true,
   })
@@ -69,7 +70,7 @@ async function run() {
         .cookie("token", token, {
           httpOnly: true,
           secure: true,
-          sameSite: "none",
+          sameSite: "None",
         })
         .send({ success: true });
     });
