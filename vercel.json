@@ -6,5 +6,16 @@
       "src": "/(.*)",
       "dest": "/"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://job-portal-client-peach.vercel.app"
+        }
+      ]
+    }
   ]
 }

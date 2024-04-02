@@ -66,7 +66,7 @@ async function run() {
         .cookie("token", token, {
           httpOnly: true,
           secure: true,
-          sameSite: "none",
+          sameSite: "strict",
         })
         .send({ success: true });
     });
