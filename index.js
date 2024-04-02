@@ -10,7 +10,10 @@ require("dotenv").config();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://hotel-booking-client-tau.vercel.app"],
+    origin: [
+      "https://hotel-booking-client-tau.vercel.app",
+      "http://localhost:5173",
+    ],
     credentials: true,
   })
 );
