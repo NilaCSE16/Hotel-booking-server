@@ -67,7 +67,7 @@ async function run() {
         expiresIn: "1h",
       });
       const refreshToken = jwt.sign(user, process.env.ACCESS_TOKEN, {
-        expiresIn: "1d",
+        expiresIn: "1h",
       });
       res
         .cookie("refreshToken", accessToken, {
