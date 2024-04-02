@@ -80,7 +80,7 @@ async function run() {
     });
     app.post("/logout", async (req, res) => {
       res
-        .clearCookie("token", {
+        .clearCookie("refreshToken", {
           maxAge: 0,
         })
         .send({ success: true });
