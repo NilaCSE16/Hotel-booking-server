@@ -74,7 +74,8 @@ async function run() {
           httpOnly: true,
           sameSite: "None",
           secure: true,
-          domain: "https://hotel-booking-client-tau.vercel.app",
+          path: "/",
+          maxAge: "1h",
         })
         .header("Authorization", accessToken)
         .send({ success: true });
