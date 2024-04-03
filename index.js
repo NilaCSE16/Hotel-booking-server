@@ -19,6 +19,9 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+});
 
 const username = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
