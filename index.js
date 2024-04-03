@@ -8,7 +8,6 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 app.use(express.json());
-app.use(express.static(path.join("/favicon.ico", "public")));
 app.use(
   cors({
     origin: [
