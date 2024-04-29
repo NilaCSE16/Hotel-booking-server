@@ -69,10 +69,11 @@ async function run() {
       // const refreshToken = jwt.sign({ user }, process.env.ACCESS_TOKEN, {
       //   expiresIn: "1h",
       // });
+
       res
         .cookie("token", token, {
           httpOnly: true,
-          sameSite: "None",
+          sameSite: "strict",
           secure: true,
         })
         .header("Authorization", token)
