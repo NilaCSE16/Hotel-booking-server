@@ -76,6 +76,7 @@ async function run() {
           secure: true,
           path: "/",
           maxAge: 3600000,
+          partitioned: true,
         })
         .header("Authorization", accessToken)
         .send({ success: true });
