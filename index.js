@@ -91,7 +91,7 @@ async function run() {
     app.post("/addUsers", async (req, res) => {
       const user = req.body;
       const result = await userCollection.insertOne(user);
-      res.send(result);
+      res.status(200).json({ message: "Successfully Added" });
     });
     app.get("/users", async (req, res) => {
       let query = {};
@@ -107,7 +107,7 @@ async function run() {
       const room = req.body;
       // console.log(room);
       const result = await roomCollection.insertOne(room);
-      res.send(result);
+      res.status(200).json({ message: "Successfully Added" });
     });
     app.get("/rooms", async (req, res) => {
       var result = [];
@@ -141,7 +141,7 @@ async function run() {
     app.post("/addBookings", async (req, res) => {
       const booking = req.body;
       const result = await bookingCollection.insertOne(booking);
-      res.send(result);
+      res.status(200).json({ message: "Successfully Added" });
     });
     app.get("/bookings", verifyToken, async (req, res) => {
       let query = {};
@@ -175,7 +175,7 @@ async function run() {
         updateDoc,
         options
       );
-      res.send(result);
+      res.status(200).json({ message: "Successfully Updated" });
     });
     app.delete("/bookings/:id", async (req, res) => {
       const id = req.params.id;
@@ -198,7 +198,7 @@ async function run() {
       const result = await bookingCollection.deleteMany({
         date: { $lt: formattedDate },
       });
-      res.send(result);
+      res.status(200).json({ message: "Deleted successful" });
     });
 
     app.post("/addBlogs", async (req, res) => {
@@ -209,7 +209,7 @@ async function run() {
     });
     app.get("/blogs", async (req, res) => {
       const result = await blogCollection.find().toArray();
-      res.send(result);
+      res.status(200).json({ message: "Successfully Added" });
     });
 
     // Send a ping to confirm a successful connection
