@@ -77,7 +77,7 @@ async function run() {
           path: "/",
           maxAge: 3600000,
         })
-        .header("Authorization", accessToken)
+        .header("Authorization", token)
         .send({ success: true });
     });
     app.post("/logout", async (req, res) => {
