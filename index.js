@@ -72,6 +72,7 @@ async function run() {
           sameSite: "none",
           secure: true,
         })
+        .header("Authorization", token)
         .json({ success: true });
     });
     app.post("/logout", async (req, res) => {
