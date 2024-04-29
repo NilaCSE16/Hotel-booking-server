@@ -74,18 +74,16 @@ async function run() {
           httpOnly: true,
           sameSite: "None",
           secure: true,
-          path: "/",
-          maxAge: 3600000,
         })
         .header("Authorization", token)
-        .send({ success: true });
+        .json({ success: true });
     });
     app.post("/logout", async (req, res) => {
       res
         .clearCookie("refreshToken", {
           maxAge: 0,
         })
-        .send({ success: true });
+        .json({ success: true });
     });
 
     app.post("/addUsers", async (req, res) => {
