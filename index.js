@@ -23,6 +23,8 @@ app.use(cookieParser());
 const username = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
 
+console.log(username);
+
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const uri = `mongodb+srv://${username}:${password}@cluster0.yexdchm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
