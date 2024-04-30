@@ -20,11 +20,11 @@ app.use(
 );
 app.use(cookieParser());
 
-const username = process.env.DB_USER;
-const password = process.env.DB_PASSWORD;
+// const username = process.env.DB_USER;
+// const password = process.env.DB_PASSWORD;
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
-const uri = `mongodb+srv://${username}:${password}@cluster0.yexdchm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = process.env.DB_USER;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
