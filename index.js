@@ -132,7 +132,7 @@ async function run() {
     });
     app.get("/roomsCount", async (req, res) => {
       const count = await roomCollection.estimatedDocumentCount();
-      res.send({ count });
+      res.send([{ count }]);
     });
 
     app.post("/addBookings", async (req, res) => {
@@ -206,7 +206,8 @@ async function run() {
     });
     app.get("/blogs", async (req, res) => {
       const result = await blogCollection.find().toArray();
-      res.status(200).json({ message: "Successfully Added" });
+      // res.status(200).json({ message: "Successfully Added" });
+      res.send(result);
     });
 
     // Send a ping to confirm a successful connection
