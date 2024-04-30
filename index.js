@@ -132,7 +132,7 @@ async function run() {
     });
     app.get("/roomsCount", async (req, res) => {
       const count = await roomCollection.estimatedDocumentCount();
-      console.log(count);
+      // console.log(count);
       res.send({ count });
     });
 
